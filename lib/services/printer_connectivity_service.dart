@@ -1,5 +1,6 @@
 import 'dart:io';
 
+
 Future<bool> checkPrinterConnectivity(
     String printerIpAddress, int printerPort) async {
   try {
