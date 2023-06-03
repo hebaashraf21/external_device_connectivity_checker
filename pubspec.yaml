@@ -37,6 +37,13 @@ dependencies:
   cupertino_icons: ^1.0.2
   hexcolor: ^3.0.1
   provider: ^6.0.5
+  camera: ^0.10.5+2
+  esc_pos_printer: ^4.1.0
+  flutter_blue_plus: ^1.5.2
+  flutter_reactive_ble: ^5.0.3
+  usb_serial: ^0.4.0
+
+
 
 dev_dependencies:
   flutter_test:
