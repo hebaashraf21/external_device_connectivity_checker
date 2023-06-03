@@ -1,7 +1,7 @@
 import 'package:usb_serial/usb_serial.dart';
 
 
-Future<bool> checkUSBConnection() async {
+Future<bool> checkUSBConnectivity() async {
   final usbDevices = await UsbSerial.listDevices();
 
   return usbDevices.isNotEmpty;

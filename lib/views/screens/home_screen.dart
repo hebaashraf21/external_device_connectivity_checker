@@ -49,7 +49,11 @@ class HomeScreen extends StatelessWidget {
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {
-                          value.showUnshowPrinterIndicator();
+                         
+                          value
+                              .checkPrinterConnection("printerIpAddress", 123);
+                              
+                           
                         },
                         style: ElevatedButton.styleFrom(
                           elevation: 0,
@@ -118,6 +122,9 @@ class HomeScreen extends StatelessWidget {
                       child: ElevatedButton(
                         onPressed: () {
                           value.showUnshowBlutoothIndicator();
+                          value.checkBlutoothConnection();
+
+                          value.showUnshowBlutoothIndicator();
                         },
                         style: ElevatedButton.styleFrom(
                           elevation: 0,
@@ -151,6 +158,9 @@ class HomeScreen extends StatelessWidget {
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {
+                          value.showUnshowUsbIndicator();
+                          value.checkUSBConnection();
+                          print(value.isUsbConnected);
                           value.showUnshowUsbIndicator();
                         },
                         style: ElevatedButton.styleFrom(

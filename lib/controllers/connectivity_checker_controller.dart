@@ -1,3 +1,7 @@
+import 'package:external_device_connectivity_checker/services/blutooth_connectivity_service.dart';
+import 'package:external_device_connectivity_checker/services/camera_connectivity_sevice.dart';
+import 'package:external_device_connectivity_checker/services/printer_connectivity_service.dart';
+import 'package:external_device_connectivity_checker/services/usb_connectivity_service.dart';
 import 'package:flutter/material.dart';
 
 class ConnectivityChecherController extends ChangeNotifier {
@@ -5,6 +9,19 @@ class ConnectivityChecherController extends ChangeNotifier {
   bool cameraIndicator = false;
   bool usbIndicator = false;
   bool bluetoothIndicator = false;
+
+  bool isPrinterConnected = false;
+  bool isCameraConnected = false;
+  bool isUsbConnected = false;
+  bool isBluetoothConnected = false;
+
+  void showPrinterIndicator() {
+    printerIndicator = true;
+  }
+
+  void hidePrinterIndicator() {
+    printerIndicator = false;
+  }
 
   void showUnshowPrinterIndicator() {
     if (printerIndicator) {
@@ -39,6 +56,33 @@ class ConnectivityChecherController extends ChangeNotifier {
     } else {
       bluetoothIndicator = true;
     }
+    notifyListeners();
+  }
+
+  Future checkPrinterConnection(
+      String printerIpAddress, int printerPort) async {
+    showPrinterIndicator();
+    isPrinterConnected =
+        await checkPrinterConnectivity(printerIpAddress, printerPort);
+    notifyListeners();
+    await Future.delayed(const Duration(seconds: 2));
+    hidePrinterIndicator();
+    notifyListeners();
+  }
+
+  void checkCameraConnection() async {
+    isCameraConnected = await checkCameraConnectivity();
+    notifyListeners();
+  }
+
+  void checkBlutoothConnection() async {
+    isBluetoothConnected = await checkBlutoothConnectivity();
+    print(blutoothDevices);
+    notifyListeners();
+  }
+
+  void checkUSBConnection() async {
+    isBluetoothConnected = await checkUSBConnectivity();
     notifyListeners();
   }
 }
