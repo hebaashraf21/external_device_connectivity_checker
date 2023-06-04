@@ -8,6 +8,7 @@ class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
   var ipAddressController = TextEditingController();
   var portController = TextEditingController();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -21,15 +22,6 @@ class HomeScreen extends StatelessWidget {
                 backgroundColor: HexColor("#EFEFEF"),
                 shadowColor: Colors.transparent,
                 centerTitle: true,
-                // title: const Text(
-                //   'Connectivity checker',
-                //   style: TextStyle(
-                //     fontFamily: 'poppins',
-                //     color: Colors.black,
-                //     fontWeight: FontWeight.w500,
-                //     fontSize: 18,
-                //   ),
-                // ),
               ),
               body: SingleChildScrollView(
                   child: Padding(
@@ -55,125 +47,143 @@ class HomeScreen extends StatelessWidget {
                             const SizedBox(
                               height: 40,
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(0),
-                              child: Row(
-                                children: [
-                                  Flexible(
-                                    flex: 1,
-                                    child: Container(
-                                      height: 48,
-                                      width: double.infinity,
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                        color: HexColor("#EFEFEF"),
-                                      ),
-                                      child: TextFormField(
-                                        validator: (val) {
-                                          if (val!.isEmpty) {
-                                            return 'Please enter printer IP Address';
-                                          } else {
-                                            return null;
-                                          }
-                                        },
-                                        cursorColor: Colors.black,
-                                        controller: ipAddressController,
-                                        keyboardType: TextInputType.number,
-                                        decoration: InputDecoration(
-                                            errorStyle: const TextStyle(
-                                                fontFamily: 'poppins',
-                                                fontSize: 10,
-                                                fontWeight: FontWeight.w400,
-                                                color: Colors.red),
-                                            contentPadding:
-                                                const EdgeInsets.symmetric(
-                                                    vertical: 10.4,
-                                                    horizontal: 16),
-                                            border: InputBorder.none,
-                                            hintText: 'Printer IP address',
-                                            hintStyle: TextStyle(
-                                                fontFamily: 'poppins',
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w400,
-                                                color: HexColor("#939094"))),
+                            Form(
+                                key: formKey,
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(0),
+                                      child: Row(
+                                        children: [
+                                          Flexible(
+                                            flex: 1,
+                                            child: Container(
+                                              height: 48,
+                                              width: double.infinity,
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                                color: HexColor("#EFEFEF"),
+                                              ),
+                                              child: TextFormField(
+                                                validator: (val) {
+                                                  if (val!.isEmpty) {
+                                                    return 'Please enter printer IP Address';
+                                                  } else {
+                                                    return null;
+                                                  }
+                                                },
+                                                cursorColor: Colors.black,
+                                                controller: ipAddressController,
+                                                keyboardType:
+                                                    TextInputType.number,
+                                                decoration: InputDecoration(
+                                                    errorStyle: const TextStyle(
+                                                        fontFamily: 'poppins',
+                                                        fontSize: 10,
+                                                        fontWeight: FontWeight
+                                                            .w400,
+                                                        color: Colors.red),
+                                                    contentPadding:
+                                                        const EdgeInsets
+                                                                .symmetric(
+                                                            vertical: 10.4,
+                                                            horizontal: 16),
+                                                    border: InputBorder.none,
+                                                    hintText:
+                                                        'Printer IP address',
+                                                    hintStyle: TextStyle(
+                                                        fontFamily: 'poppins',
+                                                        fontSize: 12,
+                                                        fontWeight:
+                                                            FontWeight.w400,
+                                                        color: HexColor(
+                                                            "#939094"))),
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: screenWidth / 30,
+                                          ),
+                                          Flexible(
+                                            flex: 1,
+                                            child: Container(
+                                              height: 48,
+                                              width: double.infinity,
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                                color: HexColor("#EFEFEF"),
+                                              ),
+                                              child: TextFormField(
+                                                validator: (val) {
+                                                  if (val!.isEmpty) {
+                                                    return 'Please enter printer port';
+                                                  } else {
+                                                    return null;
+                                                  }
+                                                },
+                                                cursorColor: Colors.black,
+                                                controller: portController,
+                                                keyboardType:
+                                                    TextInputType.number,
+                                                decoration: InputDecoration(
+                                                    errorStyle: const TextStyle(
+                                                        fontFamily: 'poppins',
+                                                        fontSize: 10,
+                                                        fontWeight: FontWeight
+                                                            .w400,
+                                                        color: Colors.red),
+                                                    contentPadding:
+                                                        const EdgeInsets
+                                                                .symmetric(
+                                                            vertical: 10.4,
+                                                            horizontal: 16),
+                                                    border: InputBorder.none,
+                                                    hintText: 'Printer port',
+                                                    hintStyle: TextStyle(
+                                                        fontFamily: 'poppins',
+                                                        fontSize: 12,
+                                                        fontWeight:
+                                                            FontWeight.w400,
+                                                        color: HexColor(
+                                                            "#939094"))),
+                                              ),
+                                            ),
+                                          )
+                                        ],
                                       ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    width: screenWidth / 30,
-                                  ),
-                                  Flexible(
-                                    flex: 1,
-                                    child: Container(
-                                      height: 48,
+                                    const SizedBox(height: 20),
+                                    SizedBox(
+                                      height: 40,
                                       width: double.infinity,
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                        color: HexColor("#EFEFEF"),
-                                      ),
-                                      child: TextFormField(
-                                        validator: (val) {
-                                          if (val!.isEmpty) {
-                                            return 'Please enter printer port';
-                                          } else {
-                                            return null;
-                                          }
+                                      child: ElevatedButton(
+                                        onPressed: () {
+                                          value.checkPrinterConnection(
+                                              ipAddressController.text,
+                                              int.parse(portController.text));
                                         },
-                                        cursorColor: Colors.black,
-                                        controller: portController,
-                                        keyboardType: TextInputType.number,
-                                        decoration: InputDecoration(
-                                            errorStyle: const TextStyle(
-                                                fontFamily: 'poppins',
-                                                fontSize: 10,
-                                                fontWeight: FontWeight.w400,
-                                                color: Colors.red),
-                                            contentPadding:
-                                                const EdgeInsets.symmetric(
-                                                    vertical: 10.4,
-                                                    horizontal: 16),
-                                            border: InputBorder.none,
-                                            hintText: 'Printer port',
-                                            hintStyle: TextStyle(
-                                                fontFamily: 'poppins',
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w400,
-                                                color: HexColor("#939094"))),
+                                        style: ElevatedButton.styleFrom(
+                                          elevation: 0,
+                                          backgroundColor: HexColor("#333E96"),
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(17.0),
+                                          ),
+                                        ),
+                                        child: Text(
+                                          "Printer",
+                                          style: TextStyle(
+                                              fontSize: 15.0,
+                                              color: HexColor("#F7F7F7"),
+                                              fontWeight: FontWeight.w400,
+                                              fontFamily: 'poppins'),
+                                        ),
                                       ),
                                     ),
-                                  )
-                                ],
-                              ),
-                            ),
-                            const SizedBox(height: 20),
-                            SizedBox(
-                              height: 40,
-                              width: double.infinity,
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  value.checkPrinterConnection(
-                                      ipAddressController.text,
-                                      int.parse(portController.text));
-                                },
-                                style: ElevatedButton.styleFrom(
-                                  elevation: 0,
-                                  backgroundColor: HexColor("#333E96"),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(17.0),
-                                  ),
-                                ),
-                                child: Text(
-                                  "Printer",
-                                  style: TextStyle(
-                                      fontSize: 15.0,
-                                      color: HexColor("#F7F7F7"),
-                                      fontWeight: FontWeight.w400,
-                                      fontFamily: 'poppins'),
-                                ),
-                              ),
-                            ),
+                                  ],
+                                )),
                             const SizedBox(
                               height: 10,
                             ),
