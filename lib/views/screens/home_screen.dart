@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
+  var ipAddressController = TextEditingController();
+  var portController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -52,13 +55,107 @@ class HomeScreen extends StatelessWidget {
                             const SizedBox(
                               height: 40,
                             ),
+                            Padding(
+                              padding: const EdgeInsets.all(0),
+                              child: Row(
+                                children: [
+                                  Flexible(
+                                    flex: 1,
+                                    child: Container(
+                                      height: 48,
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                        color: HexColor("#EFEFEF"),
+                                      ),
+                                      child: TextFormField(
+                                        validator: (val) {
+                                          if (val!.isEmpty) {
+                                            return 'Please enter printer IP Address';
+                                          } else {
+                                            return null;
+                                          }
+                                        },
+                                        cursorColor: Colors.black,
+                                        controller: ipAddressController,
+                                        keyboardType: TextInputType.number,
+                                        decoration: InputDecoration(
+                                            errorStyle: const TextStyle(
+                                                fontFamily: 'poppins',
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.w400,
+                                                color: Colors.red),
+                                            contentPadding:
+                                                const EdgeInsets.symmetric(
+                                                    vertical: 10.4,
+                                                    horizontal: 16),
+                                            border: InputBorder.none,
+                                            hintText: 'Printer IP address',
+                                            hintStyle: TextStyle(
+                                                fontFamily: 'poppins',
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w400,
+                                                color: HexColor("#939094"))),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: screenWidth / 30,
+                                  ),
+                                  Flexible(
+                                    flex: 1,
+                                    child: Container(
+                                      height: 48,
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                        color: HexColor("#EFEFEF"),
+                                      ),
+                                      child: TextFormField(
+                                        validator: (val) {
+                                          if (val!.isEmpty) {
+                                            return 'Please enter printer port';
+                                          } else {
+                                            return null;
+                                          }
+                                        },
+                                        cursorColor: Colors.black,
+                                        controller: portController,
+                                        keyboardType: TextInputType.number,
+                                        decoration: InputDecoration(
+                                            errorStyle: const TextStyle(
+                                                fontFamily: 'poppins',
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.w400,
+                                                color: Colors.red),
+                                            contentPadding:
+                                                const EdgeInsets.symmetric(
+                                                    vertical: 10.4,
+                                                    horizontal: 16),
+                                            border: InputBorder.none,
+                                            hintText: 'Printer port',
+                                            hintStyle: TextStyle(
+                                                fontFamily: 'poppins',
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w400,
+                                                color: HexColor("#939094"))),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            const SizedBox(height: 20),
                             SizedBox(
                               height: 40,
                               width: double.infinity,
                               child: ElevatedButton(
                                 onPressed: () {
                                   value.checkPrinterConnection(
-                                      "printerIpAddress", 123);
+                                      ipAddressController.text,
+                                      int.parse(portController.text));
                                 },
                                 style: ElevatedButton.styleFrom(
                                   elevation: 0,
