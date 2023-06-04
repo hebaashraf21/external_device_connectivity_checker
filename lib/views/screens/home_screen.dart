@@ -71,13 +71,9 @@ class HomeScreen extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    Visibility(
-                      visible: value.printerIndicator,
-                      child: LinearProgressIndicator(),
-                    ),
-                    Visibility(
-                      visible: value.isPrinterConnected,
-                      child: Row(
+                    if(value.printerIndicator)const LinearProgressIndicator(),
+                    if(value.isPrinterConnected)
+                    Row(
                         children: const [
                           Icon(
                             Icons.check,
@@ -93,10 +89,9 @@ class HomeScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                    ),
-                    Visibility(
-                      visible: value.isPrinterNotConnected,
-                      child: Row(
+                   
+                    if (value.isPrinterNotConnected)
+                    Row(
                         children: const [
                           Icon(
                             Icons.close,
@@ -112,7 +107,6 @@ class HomeScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                    ),
                     const SizedBox(
                       height: 30,
                     ),
@@ -143,13 +137,10 @@ class HomeScreen extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    Visibility(
-                      visible: value.cameraIndicator,
-                      child: LinearProgressIndicator(),
-                    ),
-                    Visibility(
-                      visible: value.isCameraConnected,
-                      child: Row(
+                    if(value.cameraIndicator) const LinearProgressIndicator(),
+                    if(value.isCameraConnected)
+                   
+                    Row(
                         children: const [
                           Icon(
                             Icons.check,
@@ -165,10 +156,8 @@ class HomeScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                    ),
-                    Visibility(
-                      visible: value.isCameraNotConnected,
-                      child: Row(
+                      if(value.isCameraNotConnected)
+                    Row(
                         children: const [
                           Icon(
                             Icons.close,
@@ -184,7 +173,6 @@ class HomeScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                    ),
                     const SizedBox(
                       height: 30,
                     ),
@@ -193,7 +181,7 @@ class HomeScreen extends StatelessWidget {
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {
-                          value..checkBlutoothConnection();
+                          value.checkBlutoothConnection();
                         },
                         style: ElevatedButton.styleFrom(
                           elevation: 0,
@@ -215,13 +203,9 @@ class HomeScreen extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    Visibility(
-                      visible: value.bluetoothIndicator,
-                      child: LinearProgressIndicator(),
-                    ),
-                    Visibility(
-                      visible: value.isBluetoothConnected,
-                      child: Row(
+                    if(value.bluetoothIndicator) const LinearProgressIndicator(),
+                    if(value.isBluetoothConnected)
+                    Row(
                         children: const [
                           Icon(
                             Icons.check,
@@ -237,10 +221,8 @@ class HomeScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                    ),
-                    Visibility(
-                      visible: value.isBluetoothNotConnected,
-                      child: Row(
+                      if(value.isBluetoothNotConnected)
+                    Row(
                         children: const [
                           Icon(
                             Icons.close,
@@ -256,7 +238,6 @@ class HomeScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                    ),
                     const SizedBox(
                       height: 30,
                     ),
@@ -287,13 +268,9 @@ class HomeScreen extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    Visibility(
-                      visible: value.usbIndicator,
-                      child: LinearProgressIndicator(),
-                    ),
-                    Visibility(
-                      visible: value.isUsbConnected,
-                      child: Row(
+                    if(value.usbIndicator)const LinearProgressIndicator(),
+                   if(value.isUsbConnected)
+                    Row(
                         children: const [
                           Icon(
                             Icons.check,
@@ -309,10 +286,8 @@ class HomeScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                    ),
-                    Visibility(
-                      visible: value.isUsbNotConnected,
-                      child: Row(
+                      if(value.isUsbNotConnected)
+                   Row(
                         children: const [
                           Icon(
                             Icons.close,
@@ -328,7 +303,6 @@ class HomeScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                    ),
                   ],
                 ),
               )),
