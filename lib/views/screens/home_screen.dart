@@ -1,4 +1,6 @@
 import 'package:external_device_connectivity_checker/controllers/connectivity_checker_controller.dart';
+import 'package:external_device_connectivity_checker/views/widgets/connected_widget.dart';
+import 'package:external_device_connectivity_checker/views/widgets/not_connected_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:provider/provider.dart';
@@ -190,39 +192,9 @@ class HomeScreen extends StatelessWidget {
                             if (value.printerIndicator)
                               const LinearProgressIndicator(),
                             if (value.isPrinterConnected)
-                              Row(
-                                children: const [
-                                  Icon(
-                                    Icons.check,
-                                    color: Colors.green,
-                                  ),
-                                  Text(
-                                    "Connected",
-                                    style: TextStyle(
-                                        fontSize: 15.0,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w400,
-                                        fontFamily: 'poppins'),
-                                  )
-                                ],
-                              ),
+                              const ConnectedWidget(),
                             if (value.isPrinterNotConnected)
-                              Row(
-                                children: const [
-                                  Icon(
-                                    Icons.close,
-                                    color: Colors.red,
-                                  ),
-                                  Text(
-                                    "Not connected",
-                                    style: TextStyle(
-                                        fontSize: 15.0,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w400,
-                                        fontFamily: 'poppins'),
-                                  )
-                                ],
-                              ),
+                              const NotConnectedWidget(),
                             const SizedBox(
                               height: 30,
                             ),
@@ -256,39 +228,9 @@ class HomeScreen extends StatelessWidget {
                             if (value.cameraIndicator)
                               const LinearProgressIndicator(),
                             if (value.isCameraConnected)
-                              Row(
-                                children: const [
-                                  Icon(
-                                    Icons.check,
-                                    color: Colors.green,
-                                  ),
-                                  Text(
-                                    "Connected",
-                                    style: TextStyle(
-                                        fontSize: 15.0,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w400,
-                                        fontFamily: 'poppins'),
-                                  )
-                                ],
-                              ),
+                              const ConnectedWidget(),
                             if (value.isCameraNotConnected)
-                              Row(
-                                children: const [
-                                  Icon(
-                                    Icons.close,
-                                    color: Colors.red,
-                                  ),
-                                  Text(
-                                    "Not connected",
-                                    style: TextStyle(
-                                        fontSize: 15.0,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w400,
-                                        fontFamily: 'poppins'),
-                                  )
-                                ],
-                              ),
+                              const NotConnectedWidget(),
                             const SizedBox(
                               height: 30,
                             ),
@@ -322,39 +264,9 @@ class HomeScreen extends StatelessWidget {
                             if (value.bluetoothIndicator)
                               const LinearProgressIndicator(),
                             if (value.isBluetoothConnected)
-                              Row(
-                                children: const [
-                                  Icon(
-                                    Icons.check,
-                                    color: Colors.green,
-                                  ),
-                                  Text(
-                                    "Connected",
-                                    style: TextStyle(
-                                        fontSize: 15.0,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w400,
-                                        fontFamily: 'poppins'),
-                                  )
-                                ],
-                              ),
+                              const ConnectedWidget(),
                             if (value.isBluetoothNotConnected)
-                              Row(
-                                children: const [
-                                  Icon(
-                                    Icons.close,
-                                    color: Colors.red,
-                                  ),
-                                  Text(
-                                    "Not connected",
-                                    style: TextStyle(
-                                        fontSize: 15.0,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w400,
-                                        fontFamily: 'poppins'),
-                                  )
-                                ],
-                              ),
+                              const NotConnectedWidget(),
                             const SizedBox(
                               height: 30,
                             ),
@@ -387,40 +299,9 @@ class HomeScreen extends StatelessWidget {
                             ),
                             if (value.usbIndicator)
                               const LinearProgressIndicator(),
-                            if (value.isUsbConnected)
-                              Row(
-                                children: const [
-                                  Icon(
-                                    Icons.check,
-                                    color: Colors.green,
-                                  ),
-                                  Text(
-                                    "Connected",
-                                    style: TextStyle(
-                                        fontSize: 15.0,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w400,
-                                        fontFamily: 'poppins'),
-                                  )
-                                ],
-                              ),
+                            if (value.isUsbConnected) const ConnectedWidget(),
                             if (value.isUsbNotConnected)
-                              Row(
-                                children: const [
-                                  Icon(
-                                    Icons.close,
-                                    color: Colors.red,
-                                  ),
-                                  Text(
-                                    "Not connected",
-                                    style: TextStyle(
-                                        fontSize: 15.0,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w400,
-                                        fontFamily: 'poppins'),
-                                  )
-                                ],
-                              ),
+                              const NotConnectedWidget(),
                           ],
                         ),
                       )))),
