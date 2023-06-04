@@ -15,6 +15,11 @@ class ConnectivityChecherController extends ChangeNotifier {
   bool isUsbConnected = false;
   bool isBluetoothConnected = false;
 
+  bool isPrinterNotConnected = false;
+  bool isCameraNotConnected = false;
+  bool isUsbNotConnected = false;
+  bool isBluetoothNotConnected = false;
+
   void showPrinterIndicator() {
     printerIndicator = true;
   }
@@ -61,11 +66,18 @@ class ConnectivityChecherController extends ChangeNotifier {
 
   Future checkPrinterConnection(
       String printerIpAddress, int printerPort) async {
+    isPrinterConnected = false;
+    isPrinterNotConnected = false;
+    notifyListeners();
     showPrinterIndicator();
+    await Future.delayed(const Duration(seconds: 2));
     isPrinterConnected =
         await checkPrinterConnectivity(printerIpAddress, printerPort);
+    if (!isPrinterConnected) {
+      isPrinterNotConnected = true;
+    }
     notifyListeners();
-    await Future.delayed(const Duration(seconds: 2));
+
     hidePrinterIndicator();
     notifyListeners();
   }
