@@ -28,22 +28,12 @@ class ConnectivityChecherController extends ChangeNotifier {
     printerIndicator = false;
   }
 
-  void showUnshowPrinterIndicator() {
-    if (printerIndicator) {
-      printerIndicator = false;
-    } else {
-      printerIndicator = true;
-    }
-    notifyListeners();
+  void showCameraIndicator() {
+    cameraIndicator = true;
   }
 
-  void showUnshowCameraIndicator() {
-    if (cameraIndicator) {
-      cameraIndicator = false;
-    } else {
-      cameraIndicator = true;
-    }
-    notifyListeners();
+  void hideCameraIndicator() {
+    cameraIndicator = false;
   }
 
   void showUnshowUsbIndicator() {
@@ -83,7 +73,19 @@ class ConnectivityChecherController extends ChangeNotifier {
   }
 
   void checkCameraConnection() async {
+    isCameraConnected = false;
+    isCameraNotConnected = false;
+    notifyListeners();
+    showCameraIndicator();
+    await Future.delayed(const Duration(seconds: 2));
     isCameraConnected = await checkCameraConnectivity();
+    print(isCameraConnected);
+    if (!isCameraConnected) {
+      isCameraNotConnected = true;
+    }
+    notifyListeners();
+
+    hideCameraIndicator();
     notifyListeners();
   }
 
