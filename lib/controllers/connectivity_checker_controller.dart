@@ -36,14 +36,15 @@ class ConnectivityChecherController extends ChangeNotifier {
     cameraIndicator = false;
   }
 
-  void showUnshowUsbIndicator() {
-    if (usbIndicator) {
-      usbIndicator = false;
-    } else {
-      usbIndicator = true;
-    }
-    notifyListeners();
+   void showUsbIndicator() {
+    usbIndicator = true;
   }
+
+  void hideUsbIndicator() {
+    usbIndicator = false;
+  }
+
+
 
   void showUnshowBlutoothIndicator() {
     if (bluetoothIndicator) {
@@ -89,14 +90,28 @@ class ConnectivityChecherController extends ChangeNotifier {
     notifyListeners();
   }
 
+    void checkUSBConnection() async {
+    isUsbConnected = false;
+    isUsbNotConnected = false;
+    notifyListeners();
+    showUsbIndicator();
+    await Future.delayed(const Duration(seconds: 2));
+    isUsbConnected = await checkUSBConnectivity();
+        if (!isUsbConnected) {
+      isUsbNotConnected = true;
+    }
+    notifyListeners();
+    hideUsbIndicator();
+    notifyListeners();
+  }
+
   void checkBlutoothConnection() async {
+       
+ 
     isBluetoothConnected = await checkBlutoothConnectivity();
     print(blutoothDevices);
     notifyListeners();
   }
 
-  void checkUSBConnection() async {
-    isBluetoothConnected = await checkUSBConnectivity();
-    notifyListeners();
-  }
+
 }

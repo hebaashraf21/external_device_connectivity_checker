@@ -230,10 +230,7 @@ class HomeScreen extends StatelessWidget {
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {
-                          value.showUnshowUsbIndicator();
                           value.checkUSBConnection();
-                          print(value.isUsbConnected);
-                          value.showUnshowUsbIndicator();
                         },
                         style: ElevatedButton.styleFrom(
                           elevation: 0,
@@ -258,6 +255,44 @@ class HomeScreen extends StatelessWidget {
                     Visibility(
                       visible: value.usbIndicator,
                       child: LinearProgressIndicator(),
+                    ),
+                    Visibility(
+                      visible: value.isUsbConnected,
+                      child: Row(
+                        children: const [
+                          Icon(
+                            Icons.check,
+                            color: Colors.green,
+                          ),
+                          Text(
+                            "Connected",
+                            style: TextStyle(
+                                fontSize: 15.0,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w400,
+                                fontFamily: 'poppins'),
+                          )
+                        ],
+                      ),
+                    ),
+                    Visibility(
+                      visible: value.isUsbNotConnected,
+                      child: Row(
+                        children: const [
+                          Icon(
+                            Icons.close,
+                            color: Colors.red,
+                          ),
+                          Text(
+                            "Not connected",
+                            style: TextStyle(
+                                fontSize: 15.0,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w400,
+                                fontFamily: 'poppins'),
+                          )
+                        ],
+                      ),
                     ),
                   ],
                 ),

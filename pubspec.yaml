@@ -42,7 +42,7 @@ dependencies:
   flutter_blue_plus: ^1.5.2
   flutter_reactive_ble: ^5.0.3
   usb_serial: ^0.4.0
-  flutter_blue: ^0.8.0
+
   location: ^4.4.0
 
 
