@@ -77,7 +77,6 @@ class ConnectivityChecherController extends ChangeNotifier {
     showCameraIndicator();
     await Future.delayed(const Duration(seconds: 2));
     isCameraConnected = await checkCameraConnectivity();
-    print(isCameraConnected);
     if (!isCameraConnected) {
       isCameraNotConnected = true;
     }
@@ -110,7 +109,6 @@ class ConnectivityChecherController extends ChangeNotifier {
     await Future.delayed(const Duration(seconds: 2));
 
     isBluetoothConnected = await checkBlutoothConnectivity();
-    print(blutoothDevices);
     if (!isBluetoothConnected) {
       isBluetoothNotConnected = true;
     }

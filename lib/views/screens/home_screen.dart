@@ -52,11 +52,10 @@ class HomeScreen extends StatelessWidget {
                           value.checkPrinterConnection("printerIpAddress", 123);
                         },
                         style: ElevatedButton.styleFrom(
-                          elevation: 0,
+                          elevation: 0, backgroundColor: HexColor("#333E96"),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(17.0),
                           ),
-                          primary: HexColor("#333E96"),
                         ),
                         child: Text(
                           "Printer",
@@ -118,11 +117,10 @@ class HomeScreen extends StatelessWidget {
                           value.checkCameraConnection();
                         },
                         style: ElevatedButton.styleFrom(
-                          elevation: 0,
+                          elevation: 0, backgroundColor: HexColor("#333E96"),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(17.0),
                           ),
-                          primary: HexColor("#333E96"),
                         ),
                         child: Text(
                           "Camera",
@@ -184,11 +182,10 @@ class HomeScreen extends StatelessWidget {
                           value.checkBlutoothConnection();
                         },
                         style: ElevatedButton.styleFrom(
-                          elevation: 0,
+                          elevation: 0, backgroundColor: HexColor("#333E96"),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(17.0),
                           ),
-                          primary: HexColor("#333E96"),
                         ),
                         child: Text(
                           "Blutooth",
@@ -249,11 +246,10 @@ class HomeScreen extends StatelessWidget {
                           value.checkUSBConnection();
                         },
                         style: ElevatedButton.styleFrom(
-                          elevation: 0,
+                          elevation: 0, backgroundColor: HexColor("#333E96"),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(17.0),
                           ),
-                          primary: HexColor("#333E96"),
                         ),
                         child: Text(
                           "USB",

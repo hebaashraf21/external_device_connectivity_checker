@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
             scaffoldBackgroundColor: HexColor("#EFEFEF"),
             primarySwatch: Colors.blue,
           ),
-          home: HomeScreen(),
+          home: const HomeScreen(),
         ));
   }
 }
