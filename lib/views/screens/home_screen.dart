@@ -1,3 +1,4 @@
+import 'package:external_device_connectivity_checker/constants/styles.dart';
 import 'package:external_device_connectivity_checker/controllers/connectivity_checker_controller.dart';
 import 'package:external_device_connectivity_checker/views/widgets/connected_widget.dart';
 import 'package:external_device_connectivity_checker/views/widgets/not_connected_widget.dart';
@@ -62,11 +63,7 @@ class HomeScreen extends StatelessWidget {
                                             child: Container(
                                               height: 48,
                                               width: double.infinity,
-                                              decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                color: HexColor("#EFEFEF"),
-                                              ),
+                                              decoration: containerDecoration,
                                               child: TextFormField(
                                                 validator: (val) {
                                                   if (val!.isEmpty) {
@@ -80,27 +77,13 @@ class HomeScreen extends StatelessWidget {
                                                 keyboardType:
                                                     TextInputType.number,
                                                 decoration: InputDecoration(
-                                                    errorStyle: const TextStyle(
-                                                        fontFamily: 'poppins',
-                                                        fontSize: 10,
-                                                        fontWeight: FontWeight
-                                                            .w400,
-                                                        color: Colors.red),
+                                                    errorStyle: errorTextStyle,
                                                     contentPadding:
-                                                        const EdgeInsets
-                                                                .symmetric(
-                                                            vertical: 10.4,
-                                                            horizontal: 16),
+                                                        contentPaddingTextField,
                                                     border: InputBorder.none,
                                                     hintText:
                                                         'Printer IP address',
-                                                    hintStyle: TextStyle(
-                                                        fontFamily: 'poppins',
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                        color: HexColor(
-                                                            "#939094"))),
+                                                    hintStyle: hintTextStyle),
                                               ),
                                             ),
                                           ),
@@ -112,11 +95,7 @@ class HomeScreen extends StatelessWidget {
                                             child: Container(
                                               height: 48,
                                               width: double.infinity,
-                                              decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                color: HexColor("#EFEFEF"),
-                                              ),
+                                              decoration: containerDecoration,
                                               child: TextFormField(
                                                 validator: (val) {
                                                   if (val!.isEmpty) {
@@ -130,26 +109,12 @@ class HomeScreen extends StatelessWidget {
                                                 keyboardType:
                                                     TextInputType.number,
                                                 decoration: InputDecoration(
-                                                    errorStyle: const TextStyle(
-                                                        fontFamily: 'poppins',
-                                                        fontSize: 10,
-                                                        fontWeight: FontWeight
-                                                            .w400,
-                                                        color: Colors.red),
+                                                    errorStyle: errorTextStyle,
                                                     contentPadding:
-                                                        const EdgeInsets
-                                                                .symmetric(
-                                                            vertical: 10.4,
-                                                            horizontal: 16),
+                                                        contentPaddingTextField,
                                                     border: InputBorder.none,
                                                     hintText: 'Printer port',
-                                                    hintStyle: TextStyle(
-                                                        fontFamily: 'poppins',
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                        color: HexColor(
-                                                            "#939094"))),
+                                                    hintStyle: hintTextStyle),
                                               ),
                                             ),
                                           )
@@ -166,22 +131,9 @@ class HomeScreen extends StatelessWidget {
                                               ipAddressController.text,
                                               int.parse(portController.text));
                                         },
-                                        style: ElevatedButton.styleFrom(
-                                          elevation: 0,
-                                          backgroundColor: HexColor("#333E96"),
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(17.0),
-                                          ),
-                                        ),
-                                        child: Text(
-                                          "Printer",
-                                          style: TextStyle(
-                                              fontSize: 15.0,
-                                              color: HexColor("#F7F7F7"),
-                                              fontWeight: FontWeight.w400,
-                                              fontFamily: 'poppins'),
-                                        ),
+                                        style: buttonStyle,
+                                        child: Text("Printer",
+                                            style: buttonTextStyle),
                                       ),
                                     ),
                                   ],
@@ -205,21 +157,8 @@ class HomeScreen extends StatelessWidget {
                                 onPressed: () {
                                   value.checkCameraConnection();
                                 },
-                                style: ElevatedButton.styleFrom(
-                                  elevation: 0,
-                                  backgroundColor: HexColor("#333E96"),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(17.0),
-                                  ),
-                                ),
-                                child: Text(
-                                  "Camera",
-                                  style: TextStyle(
-                                      fontSize: 15.0,
-                                      color: HexColor("#F7F7F7"),
-                                      fontWeight: FontWeight.w400,
-                                      fontFamily: 'poppins'),
-                                ),
+                                style: buttonStyle,
+                                child: Text("Camera", style: buttonTextStyle),
                               ),
                             ),
                             const SizedBox(
@@ -241,21 +180,8 @@ class HomeScreen extends StatelessWidget {
                                 onPressed: () {
                                   value.checkBlutoothConnection();
                                 },
-                                style: ElevatedButton.styleFrom(
-                                  elevation: 0,
-                                  backgroundColor: HexColor("#333E96"),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(17.0),
-                                  ),
-                                ),
-                                child: Text(
-                                  "Blutooth",
-                                  style: TextStyle(
-                                      fontSize: 15.0,
-                                      color: HexColor("#F7F7F7"),
-                                      fontWeight: FontWeight.w400,
-                                      fontFamily: 'poppins'),
-                                ),
+                                style: buttonStyle,
+                                child: Text("Blutooth", style: buttonTextStyle),
                               ),
                             ),
                             const SizedBox(
@@ -277,21 +203,8 @@ class HomeScreen extends StatelessWidget {
                                 onPressed: () {
                                   value.checkUSBConnection();
                                 },
-                                style: ElevatedButton.styleFrom(
-                                  elevation: 0,
-                                  backgroundColor: HexColor("#333E96"),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(17.0),
-                                  ),
-                                ),
-                                child: Text(
-                                  "USB",
-                                  style: TextStyle(
-                                      fontSize: 15.0,
-                                      color: HexColor("#F7F7F7"),
-                                      fontWeight: FontWeight.w400,
-                                      fontFamily: 'poppins'),
-                                ),
+                                style: buttonStyle,
+                                child: Text("USB", style: buttonTextStyle),
                               ),
                             ),
                             const SizedBox(
