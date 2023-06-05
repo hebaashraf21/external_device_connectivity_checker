@@ -127,9 +127,13 @@ class HomeScreen extends StatelessWidget {
                                       width: double.infinity,
                                       child: ElevatedButton(
                                         onPressed: () {
-                                          value.checkPrinterConnection(
+                                          if (formKey.currentState!
+                                              .validate()) {
+                                            value.checkPrinterConnection(
                                               ipAddressController.text,
-                                              int.parse(portController.text));
+                                              int.parse(portController.text),
+                                            );
+                                          }
                                         },
                                         style: buttonStyle,
                                         child: Text("Printer",
