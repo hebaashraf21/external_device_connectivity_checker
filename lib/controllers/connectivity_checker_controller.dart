@@ -5,21 +5,25 @@ import 'package:external_device_connectivity_checker/services/usb_connectivity_s
 import 'package:flutter/material.dart';
 
 class ConnectivityChecherController extends ChangeNotifier {
+  /// Variables that determine whether the progress indicators are shown or not
   bool printerIndicator = false;
   bool cameraIndicator = false;
   bool usbIndicator = false;
   bool bluetoothIndicator = false;
 
+  /// Variables that determine whether the devices are connected or not
   bool isPrinterConnected = false;
   bool isCameraConnected = false;
   bool isUsbConnected = false;
   bool isBluetoothConnected = false;
 
+  /// Variables that determine whether the devices are not connected or not (used to show the result)
   bool isPrinterNotConnected = false;
   bool isCameraNotConnected = false;
   bool isUsbNotConnected = false;
   bool isBluetoothNotConnected = false;
 
+  /// Functions to show/hide progress indicators
   void showPrinterIndicator() {
     printerIndicator = true;
   }
@@ -52,6 +56,9 @@ class ConnectivityChecherController extends ChangeNotifier {
     bluetoothIndicator = false;
   }
 
+  /// A function that check the printer connection by calling the printer service
+  /// the function also controlles the ui to show the result of the check & show/hide progress indicators
+  /// the function takes 2 parameters: printer IP address & printer port
   Future checkPrinterConnection(
       String printerIpAddress, int printerPort) async {
     isPrinterConnected = false;
@@ -70,6 +77,8 @@ class ConnectivityChecherController extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// A function that check the camera connection by calling the camera service
+  /// the function also controlles the ui to show the result of the check & show/hide progress indicators
   void checkCameraConnection() async {
     isCameraConnected = false;
     isCameraNotConnected = false;
@@ -86,6 +95,8 @@ class ConnectivityChecherController extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// A function that check the USB connection by calling the USB service
+  /// the function also controlles the ui to show the result of the check & show/hide progress indicators
   void checkUSBConnection() async {
     isUsbConnected = false;
     isUsbNotConnected = false;
@@ -101,6 +112,8 @@ class ConnectivityChecherController extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// A function that check the bluetooth connection by calling the bluetooth service
+  /// the function also controlles the ui to show the result of the check & show/hide progress indicators
   void checkBlutoothConnection() async {
     isBluetoothConnected = false;
     isBluetoothNotConnected = false;
