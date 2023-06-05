@@ -11,7 +11,7 @@
 </summary>
 
 
-
+- [📑 About](#about)
 - [⛏️ Built With](#built-with)
 - [🏁 Getting started](#getting-started)
 - [📦 Packages used](#packages-used)
@@ -21,6 +21,11 @@
 - [✍️ Contributors](#contributors)   
 - [🔒 License](#license)
 </details>
+
+
+## 📑 About
+- "External devices connectivity checker" is a Flutter web view application that checks the connectivity with external devices such as printers and cameras..
+- The app was built as a Training Task Assignment for the "EASACC institute for information technology".  
 
 ## ⛏️ Built With 
  <ul>
@@ -90,9 +95,7 @@
 
 
 ## 🎥 Demo video
-
-
-
+https://github.com/hebaashraf21/external_device_connectivity_checker/assets/90224487/4e8488f2-3828-400f-bdec-93884abd5764
 
 
 ## ✍️ Contributors
