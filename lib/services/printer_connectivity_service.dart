@@ -1,5 +1,8 @@
 import 'dart:io';
 
+/// A function to check printer connectivity
+/// the function returns true if a printer is connected
+/// the function takes 2 parameters: printer IP address & printer port
 Future<bool> checkPrinterConnectivity(
     String printerIpAddress, int printerPort) async {
   try {
