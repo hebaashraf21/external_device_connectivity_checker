@@ -19,7 +19,6 @@
 - [🖼️ Screenshots](#screenshots)  
 - [🎥 Demo](#demo)  
 - [✍️ Contributors](#contributors)   
-- [🔒 License](#license)
 </details>
 
 
