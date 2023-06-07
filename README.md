@@ -84,17 +84,22 @@
 <li><em>🔌 Check usb connectivity </em></li>
 
 ## 🖼️ Screenshots 
-![2023-06-05 (6)](https://github.com/hebaashraf21/external_device_connectivity_checker/assets/90224487/8eaa27a6-4d2c-40d9-aa47-13a7485e9197)
 
-![2023-06-05 (3)](https://github.com/hebaashraf21/external_device_connectivity_checker/assets/90224487/f43ce2ab-b7b7-4554-8a38-372a1a8dd813)
+![2023-06-05 (6)](https://github.com/hebaashraf21/hebaashraf21/assets/90224487/b9f36f2f-bb02-4003-9c77-f3d1cee41d21)
 
-![2023-06-05 (4)](https://github.com/hebaashraf21/external_device_connectivity_checker/assets/90224487/5a4b32bf-b8c3-4403-aeec-d29e4fa49e39)
+![2023-06-05 (3)](https://github.com/hebaashraf21/hebaashraf21/assets/90224487/280dac64-5bbb-4878-9b3f-f35b13b99477)
 
-![2023-06-05 (7)](https://github.com/hebaashraf21/external_device_connectivity_checker/assets/90224487/956c9e05-1d17-4fef-a838-bffaf5d837c5)
+![2023-06-05 (4)](https://github.com/hebaashraf21/hebaashraf21/assets/90224487/586c2902-b693-4ba5-87c8-188597df2e0b)
+
+![2023-06-05 (7)](https://github.com/hebaashraf21/hebaashraf21/assets/90224487/d9ec36e8-0cba-4a4a-bc28-a7779ab6cf6b)
+
 
 
 ## 🎥 Demo video
-https://github.com/hebaashraf21/external_device_connectivity_checker/assets/90224487/4e8488f2-3828-400f-bdec-93884abd5764
+
+https://github.com/hebaashraf21/hebaashraf21/assets/90224487/bce58798-c697-4520-bb86-044e4b10ecf7
+
+
 
 
 ## ✍️ Contributors
